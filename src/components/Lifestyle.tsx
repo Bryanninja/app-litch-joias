@@ -5,6 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from '@/components/Button';
+import { getWhatsAppLink, WHATSAPP_MESSAGES } from '@/lib/whatsapp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,7 +59,7 @@ export default function Lifestyle() {
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
             <div className="absolute bottom-6 left-0 right-0 flex justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              <Button variant="white">
+              <Button variant="white" href={getWhatsAppLink(WHATSAPP_MESSAGES.linhaFeminina)}>
                 Linha Feminina
               </Button>
             </div>
@@ -73,7 +74,7 @@ export default function Lifestyle() {
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
             <div className="absolute bottom-6 left-0 right-0 flex justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              <Button variant="white">
+              <Button variant="white" href={getWhatsAppLink(WHATSAPP_MESSAGES.linhaMasculina)}>
                 Linha Masculina
               </Button>
             </div>
@@ -88,7 +89,7 @@ export default function Lifestyle() {
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
             <div className="absolute bottom-6 left-0 right-0 flex justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              <Button variant="white">
+              <Button variant="white" href={getWhatsAppLink(WHATSAPP_MESSAGES.sobEncomenda)}>
                 Joias Sob Encomenda
               </Button>
             </div>

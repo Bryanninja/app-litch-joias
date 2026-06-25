@@ -1,4 +1,5 @@
 import Button from '@/components/Button';
+import { getWhatsAppLink, WHATSAPP_MESSAGES } from '@/lib/whatsapp';
 
 export default function FinalCTA() {
   return (
@@ -23,7 +24,7 @@ export default function FinalCTA() {
         <p className="mx-auto mb-10 text-lg font-light tracking-wide text-pretty opacity-90">
           Escolher a aliança perfeita é um momento único. Fale diretamente com a Ana para um atendimento consultivo pelo WhatsApp, ou venha tomar um café conosco na nossa loja no Centro de Pedro Leopoldo.
         </p>
-        <Button variant="primary">
+        <Button variant="primary" href={getWhatsAppLink(WHATSAPP_MESSAGES.finalCta)}>
           ENTRAR EM CONTATO
         </Button>
       </div>

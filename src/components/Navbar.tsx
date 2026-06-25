@@ -6,6 +6,7 @@ import { Menu, X, ShoppingBag } from 'lucide-react';
 import clsx from 'clsx';
 import Logo from '@/components/Logo';
 import Button from '@/components/Button';
+import { getWhatsAppLink, WHATSAPP_MESSAGES } from '@/lib/whatsapp';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,6 +63,7 @@ export default function Navbar() {
           ))}
           <Button
             variant="outline"
+            href={getWhatsAppLink(WHATSAPP_MESSAGES.navbar)}
             className={clsx(
               isScrolled ? 'border-licht-dark' : 'border-white',
             )}
@@ -90,7 +92,11 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button variant="outline" className="mt-4 w-full border-licht-dark text-licht-dark">
+          <Button 
+            variant="outline" 
+            href={getWhatsAppLink(WHATSAPP_MESSAGES.navbar)}
+            className="mt-4 w-full border-licht-dark text-licht-dark"
+          >
             Fale no WhatsApp
           </Button>
         </div>

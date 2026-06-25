@@ -1,14 +1,19 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState, FormEvent } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "@/components/Button";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CustomDesignForm() {
   const formRef = useRef<HTMLDivElement>(null);
+  
+  const [nome, setNome] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [momento, setMomento] = useState("");
 
   useEffect(() => {
     if (formRef.current) {
@@ -28,6 +33,14 @@ export default function CustomDesignForm() {
       );
     }
   }, []);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const clientName = nome.trim() ? nome : "um cliente";
+    const momentInfo = momento.trim() ? ` Meu momento especial é: ${momento}.` : "";
+    const msg = `Olá Ana! Meu nome é ${clientName}.${momentInfo} Gostaria de solicitar um atendimento VIP para criar uma joia sob medida.`;
+    window.open(getWhatsAppLink(msg), "_blank");
+  };
 
   return (
     <section className="py-32 relative bg-licht-taupe overflow-hidden">
@@ -50,11 +63,13 @@ export default function CustomDesignForm() {
             </p>
           </div>
 
-          <form className="space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-8">
             <div>
               <input 
                 type="text" 
                 placeholder="Nome" 
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
                 className="w-full border-b border-licht-taupe/40 pb-3 bg-transparent outline-none focus:border-licht-gold transition-colors font-light placeholder:text-licht-taupe/70"
               />
             </div>
@@ -62,6 +77,8 @@ export default function CustomDesignForm() {
               <input 
                 type="text" 
                 placeholder="WhatsApp" 
+                value={whatsapp}
+                onChange={(e) => setWhatsapp(e.target.value)}
                 className="w-full border-b border-licht-taupe/40 pb-3 bg-transparent outline-none focus:border-licht-gold transition-colors font-light placeholder:text-licht-taupe/70"
               />
             </div>
@@ -69,11 +86,13 @@ export default function CustomDesignForm() {
               <input 
                 type="text" 
                 placeholder="Qual é o seu momento? (Noivado, Casamento, Namoro)" 
+                value={momento}
+                onChange={(e) => setMomento(e.target.value)}
                 className="w-full border-b border-licht-taupe/40 pb-3 bg-transparent outline-none focus:border-licht-gold transition-colors font-light placeholder:text-licht-taupe/70"
               />
             </div>
 
-            <Button variant="form" className="mt-4">
+            <Button type="submit" variant="form" className="mt-4">
               SOLICITAR ATENDIMENTO VIP
             </Button>
           </form>

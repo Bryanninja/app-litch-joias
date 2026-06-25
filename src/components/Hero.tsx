@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ChevronDown } from 'lucide-react';
 import Button from '@/components/Button';
+import { getWhatsAppLink, WHATSAPP_MESSAGES } from '@/lib/whatsapp';
 
 export default function Hero() {
   const textRef = useRef<HTMLDivElement>(null);
@@ -56,7 +57,9 @@ export default function Hero() {
           Joias artesanais em Ouro 18k e Prata 925, feitas para materializar a
           sua história.
         </p>
-        <Button variant="primary">EXPLORAR COLEÇÃO</Button>
+        <Button variant="primary" href={getWhatsAppLink(WHATSAPP_MESSAGES.hero)}>
+          EXPLORAR COLEÇÃO
+        </Button>
       </div>
 
       {/* Scroll Indicator */}

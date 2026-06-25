@@ -1,12 +1,17 @@
-import { ButtonHTMLAttributes, forwardRef } from "react";
+import { ButtonHTMLAttributes, AnchorHTMLAttributes, forwardRef } from "react";
 import clsx from "clsx";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonBaseProps = {
   variant?: "primary" | "outline" | "white" | "form";
-}
+};
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "primary", children, ...props }, ref) => {
+type ButtonAsButton = ButtonBaseProps & ButtonHTMLAttributes<HTMLButtonElement> & { href?: never };
+type ButtonAsAnchor = ButtonBaseProps & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
+
+type ButtonProps = ButtonAsButton | ButtonAsAnchor;
+
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
+  ({ className, variant = "primary", children, href, ...props }, ref) => {
     
     const baseStyles = "cursor-pointer inline-flex items-center justify-center uppercase tracking-widest text-sm transition-colors duration-300 font-semibold text-center";
     
@@ -17,11 +22,26 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       form: "bg-licht-gold text-white py-4 hover:bg-licht-dark w-full",
     };
 
+    if (href) {
+      return (
+        <a
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          href={href}
+          className={clsx(baseStyles, variants[variant], className)}
+          target="_blank"
+          rel="noopener noreferrer"
+          {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+        >
+          {children}
+        </a>
+      );
+    }
+
     return (
       <button
-        ref={ref}
+        ref={ref as React.Ref<HTMLButtonElement>}
         className={clsx(baseStyles, variants[variant], className)}
-        {...props}
+        {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
       >
         {children}
       </button>

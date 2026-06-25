@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-licht-dark: #2C2A28;
+  --color-licht-gold: #CBA164;
+  --color-licht-light: #F8F6F3;
+  --color-licht-taupe: #A89F91;
+}
+
+@layer base {
+  html, body {
+    font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif !important;
+    @apply bg-licht-light text-licht-dark antialiased selection:bg-licht-gold selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), ui-serif, Georgia, serif !important;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-playfair), ui-serif, Georgia, serif !important;
+  }
+  
+  .font-sans {
+    font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif !important;
+  }
+}
+
+@layer base {
+  button, a {
+    cursor: pointer !important;
+  }
+}

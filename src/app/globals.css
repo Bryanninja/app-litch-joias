@@ -10,7 +10,7 @@
 @layer base {
   html, body {
     font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif !important;
-    @apply bg-licht-light text-licht-dark antialiased selection:bg-licht-gold selection:text-white;
+    @apply bg-licht-light text-licht-dark antialiased selection:bg-licht-gold selection:text-white overflow-x-hidden w-full;
   }
   
   h1, h2, h3, h4, h5, h6 {

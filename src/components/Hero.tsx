@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ChevronDown } from 'lucide-react';
 import Button from '@/components/Button';
 
 export default function Hero() {
@@ -52,11 +53,19 @@ export default function Hero() {
           O brilho do seu <span className="italic">"sim"</span> começa aqui.
         </h1>
         <p className="mx-auto mb-10 max-w-md text-lg font-light tracking-wide text-pretty opacity-90 md:text-xl">
-          Joias artesanais em Ouro 18k e Prata 925, feitas para materializar a sua história.
+          Joias artesanais em Ouro 18k e Prata 925, feitas para materializar a
+          sua história.
         </p>
-        <Button variant="primary">
-          EXPLORAR COLEÇÃO
-        </Button>
+        <Button variant="primary">EXPLORAR COLEÇÃO</Button>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce cursor-pointer">
+        <ChevronDown
+          className="text-white/60 transition-colors hover:text-white"
+          size={48}
+          strokeWidth={1.5}
+        />
       </div>
     </section>
   );

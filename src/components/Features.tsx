@@ -49,12 +49,11 @@ export default function Features() {
 
   return (
     <section ref={sectionRef} className="relative py-24 bg-licht-light overflow-hidden">
-      {/* Background overlapping rings pattern */}
-      <div className="absolute inset-0 pointer-events-none opacity-5 flex items-center justify-center">
-        <div className="w-[800px] h-[800px] rounded-full border border-licht-dark absolute -top-40 -left-40" />
-        <div className="w-[600px] h-[600px] rounded-full border border-licht-dark absolute top-20 left-20" />
-        <div className="w-[1000px] h-[1000px] rounded-full border border-licht-dark absolute -bottom-40 -right-20" />
-      </div>
+      {/* Background pattern */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-[0.04] md:opacity-[0.06]" 
+        style={{ backgroundImage: "url('/Pattern.svg')", backgroundSize: "400px", backgroundRepeat: "repeat", backgroundPosition: "center" }}
+      />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

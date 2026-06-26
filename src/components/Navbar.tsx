@@ -30,13 +30,28 @@ export default function Navbar() {
   return (
     <header
       className={clsx(
-        'fixed top-0 right-0 left-0 z-50 transition-all duration-300',
+        'fixed left-0 top-0 z-50 w-full transition-all duration-500',
         isScrolled
-          ? 'bg-licht-light/90 text-licht-dark py-4 shadow-sm backdrop-blur-md'
-          : 'bg-transparent py-6 text-white',
+          ? 'bg-licht-light shadow-sm'
+          : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto flex items-center justify-between px-6 md:px-12">
+      {/* Announcement Bar */}
+      <div 
+        className={clsx(
+          "w-full bg-licht-dark text-white/90 text-center text-[10px] sm:text-xs tracking-[0.2em] uppercase font-medium transition-all duration-500 overflow-hidden flex items-center justify-center",
+          isScrolled ? "h-0 opacity-0" : "h-10 opacity-100"
+        )}
+      >
+        <span>Envio seguro para todo o Brasil • Garantia Vitalícia</span>
+      </div>
+
+      <nav 
+        className={clsx(
+          "container mx-auto px-6 lg:px-12 flex items-center justify-between transition-all duration-500",
+          isScrolled ? "py-4 text-licht-dark" : "py-6 text-white"
+        )}
+      >
         {/* Logo */}
         <Link
           href="/"

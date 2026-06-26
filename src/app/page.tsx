@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import FeaturesTicker from "@/components/FeaturesTicker";
 import Features from "@/components/Features";
 import Materials from "@/components/Materials";
 import Lifestyle from "@/components/Lifestyle";
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="bg-licht-light text-licht-dark min-h-screen">
       <Navbar />
       <Hero />
+      <FeaturesTicker />
       <Features />
       <Materials />
       <Lifestyle />

@@ -36,15 +36,7 @@ export default function Navbar() {
           : 'bg-transparent'
       )}
     >
-      {/* Announcement Bar */}
-      <div 
-        className={clsx(
-          "w-full bg-licht-dark text-white/90 text-center text-[10px] sm:text-xs tracking-[0.2em] uppercase font-medium transition-all duration-500 overflow-hidden flex items-center justify-center",
-          isScrolled ? "h-0 opacity-0" : "h-10 opacity-100"
-        )}
-      >
-        <span>Envio seguro para todo o Brasil • Garantia Vitalícia</span>
-      </div>
+
 
       <nav 
         className={clsx(

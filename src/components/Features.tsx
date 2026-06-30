@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from 'react';
+import Image from 'next/image';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,12 +22,12 @@ export default function Features() {
           y: 0,
           duration: 1,
           stagger: 0.2,
-          ease: "power2.out",
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 75%",
+            start: 'top 75%',
           },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -37,55 +37,74 @@ export default function Features() {
           opacity: 1,
           scale: 1,
           duration: 1.2,
-          ease: "power2.out",
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 75%",
+            start: 'top 75%',
           },
-        }
+        },
       );
     }
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 bg-licht-light overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="bg-licht-light relative overflow-hidden py-24"
+    >
       {/* Background pattern */}
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.04] md:opacity-[0.06]" 
-        style={{ backgroundImage: "url('/Pattern.svg')", backgroundSize: "400px", backgroundRepeat: "repeat", backgroundPosition: "center" }}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: "url('/Pattern.svg')",
+          backgroundSize: '1200px',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: 'right center',
+        }}
       />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+      <div className="relative z-10 container mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div ref={textRef} className="max-w-xl">
-            <h4 className="text-sm uppercase tracking-widest text-licht-taupe mb-4">Explore nossas categorias</h4>
-            <h2 className="text-4xl lg:text-5xl font-serif text-licht-dark mb-6 leading-snug">
+            <h4 className="text-licht-taupe mb-4 text-sm tracking-widest uppercase">
+              Explore nossas categorias
+            </h4>
+            <h2 className="text-licht-dark mb-6 font-serif text-4xl leading-snug lg:text-5xl">
               Designs que marcam histórias.
             </h2>
-            <p className="text-licht-dark/70 text-lg mb-8 font-light">
-              Uma seleção exclusiva dos modelos mais desejados por casais que buscam eternizar o compromisso com elegância e significado.
+            <p className="text-licht-dark/70 mb-8 text-lg font-light">
+              Uma seleção exclusiva dos modelos mais desejados por casais que
+              buscam eternizar o compromisso com elegância e significado.
             </p>
-            
+
             <div className="flex items-start space-x-4">
-              <div className="p-4 bg-white shadow-md rounded-sm">
-                <p className="text-xs uppercase tracking-wider text-licht-taupe mb-1">Destaque</p>
-                <h5 className="font-serif text-lg text-licht-dark mb-2">Alianças de casamento</h5>
-                <p className="text-sm text-licht-dark/70 font-light">Alianças artesanais com conforto semi anatômico, acabamento impecável e gravação a laser personalizada inclusa.</p>
+              <div className="rounded-sm bg-white p-4 shadow-md">
+                <p className="text-licht-taupe mb-1 text-xs tracking-wider uppercase">
+                  Destaque
+                </p>
+                <h5 className="text-licht-dark mb-2 font-serif text-lg">
+                  Alianças de casamento
+                </h5>
+                <p className="text-licht-dark/70 text-sm font-light">
+                  Alianças artesanais com conforto semi anatômico, acabamento
+                  impecável e gravação a laser personalizada inclusa.
+                </p>
               </div>
             </div>
           </div>
 
-          <div ref={imageRef} className="relative h-[500px] w-full">
-            <div className="absolute inset-0 bg-gradient-to-tr from-licht-taupe/20 to-transparent rounded-full blur-3xl opacity-50"></div>
-            <Image 
-              src="https://images.unsplash.com/photo-1599643477874-5c866f5c0c0b?q=80&w=1000&auto=format&fit=crop"
+          <div
+            ref={imageRef}
+            className="relative h-[500px] w-full"
+          >
+            <div className="from-licht-taupe/20 absolute inset-0 rounded-full bg-gradient-to-tr to-transparent opacity-50 blur-3xl"></div>
+            <Image
+              src="/photos/anel.jpg"
               alt="Aliança em destaque"
               fill
-              className="object-contain drop-shadow-2xl"
+              className="object-contain mix-blend-multiply"
             />
           </div>
-
         </div>
       </div>
     </section>

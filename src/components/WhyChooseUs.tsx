@@ -39,10 +39,10 @@ export default function WhyChooseUs() {
           
           <div className="relative h-[600px] w-full">
             <Image 
-              src="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?q=80&w=800&auto=format&fit=crop"
+              src="/photos/anel.jpg"
               alt="Caixinha icônica da Licht Joias"
               fill
-              className="object-cover"
+              className="object-cover mix-blend-multiply"
             />
           </div>
 

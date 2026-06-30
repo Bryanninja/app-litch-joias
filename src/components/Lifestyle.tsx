@@ -52,10 +52,10 @@ export default function Lifestyle() {
           
           <div className="relative h-full w-full overflow-hidden group">
             <Image 
-              src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop"
+              src="/photos/anel.jpg"
               alt="Modelo usando joias Licht"
               fill
-              className="object-cover transition-transform duration-1000 group-hover:scale-105"
+              className="object-contain transition-transform duration-1000 group-hover:scale-105 mix-blend-multiply"
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
             <div className="absolute bottom-6 left-0 right-0 flex justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
@@ -67,10 +67,10 @@ export default function Lifestyle() {
 
           <div className="relative h-full w-full overflow-hidden group md:-translate-y-12">
             <Image 
-              src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop"
+              src="/photos/anel.jpg"
               alt="Colar Licht em destaque"
               fill
-              className="object-cover transition-transform duration-1000 group-hover:scale-105"
+              className="object-contain transition-transform duration-1000 group-hover:scale-105 mix-blend-multiply"
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
             <div className="absolute bottom-6 left-0 right-0 flex justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
@@ -82,10 +82,10 @@ export default function Lifestyle() {
 
           <div className="relative h-full w-full overflow-hidden group">
             <Image 
-              src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop"
+              src="/photos/anel.jpg"
               alt="Anéis Licht exclusividade"
               fill
-              className="object-cover transition-transform duration-1000 group-hover:scale-105"
+              className="object-contain transition-transform duration-1000 group-hover:scale-105 mix-blend-multiply"
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
             <div className="absolute bottom-6 left-0 right-0 flex justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">

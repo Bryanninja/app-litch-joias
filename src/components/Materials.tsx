@@ -15,7 +15,7 @@ const products = [
     price: "R$ 450,00",
     rating: 5,
     material: "Prata 925",
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b2828e?q=80&w=800&auto=format&fit=crop",
+    image: "/photos/anel.jpg",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const products = [
     price: "R$ 680,00",
     rating: 5,
     material: "Prata 925",
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b2828e?q=80&w=800&auto=format&fit=crop",
+    image: "/photos/anel.jpg",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const products = [
     price: "R$ 2.450,00",
     rating: 5,
     material: "Ouro 18k",
-    image: "https://images.unsplash.com/photo-1599643478514-4a4e5fbd2c2d?q=80&w=800&auto=format&fit=crop",
+    image: "/photos/anel.jpg",
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const products = [
     price: "R$ 3.100,00",
     rating: 5,
     material: "Ouro 18k",
-    image: "https://images.unsplash.com/photo-1599643478514-4a4e5fbd2c2d?q=80&w=800&auto=format&fit=crop",
+    image: "/photos/anel.jpg",
   }
 ];
 

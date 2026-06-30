@@ -18,11 +18,11 @@ const RingsIcon = () => (
 
 export default function FeaturesTicker() {
   return (
-    <div className="w-full bg-licht-taupe py-4 overflow-hidden relative flex items-center z-20">
-      <div className="animate-marquee whitespace-nowrap flex items-center">
+    <div className="w-full bg-licht-taupe py-4 overflow-hidden relative z-20">
+      <div className="animate-marquee whitespace-nowrap">
         {/* Duplicate the items multiple times for infinite scroll effect */}
         {[...Array(4)].map((_, i) => (
-          <div key={i} className="flex items-center">
+          <div key={i} className="inline-flex items-center">
             <span className="mx-8 text-xs sm:text-sm uppercase tracking-widest text-licht-dark font-semibold">
               Envio para todo o Brasil
             </span>
